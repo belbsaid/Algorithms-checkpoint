@@ -1,0 +1,40 @@
+ALGORITHM algorithm_name
+VAR
+ wordsCounter, lettersCounter, vowelsCounter, userInput = INTEGER 
+ ch, i = STRING
+  
+
+BEGIN
+    wordsCounter := 1
+    lettersCounter := 0
+    vowelsCounter := 0
+
+    Write("Enter a sentence that ends with a point.")
+    Read(userInput)
+
+    i := 0
+    
+
+    WHILE (ch != ".") DO
+     
+        lettersCounter := lettersCounter++
+
+        IF (ch = " ") THEN
+            wordsCounter := wordsCounter++1
+        END_IF 
+
+        IF (ch = "a") OR (ch = "e") OR (ch = "i") OR (ch = "o") OR (ch = "u") OR
+       (ch = "A") OR (ch = "E") OR (ch = "I") OR (ch = "O") OR (ch = "U") THEN
+            vowelsCounter := vowelsCounter++
+        END_IF
+
+        i := i++
+        ch := userInput[i]
+    END_WHILE
+
+    lettersCounter := lettersCounter++ 
+
+    Write( "The number of words in this sentence is ", wordsCounter)
+    Write( "The number of vowels in this sentence is ", vowelsCounter)
+    Write( "The number of characters in this sentence is ", lettersCounter)
+END
